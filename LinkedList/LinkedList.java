@@ -2,8 +2,9 @@ package DS_ALGO.LinkedList;
 
 public class LinkedList {
 
-    // Data Insert
     Node head;
+
+    // Data Insert
     public void insert (int data) {
         Node node = new Node();
         node.data = data;
@@ -12,29 +13,47 @@ public class LinkedList {
         if(head == null) {
             head = node;
         } else {
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
+            Node tempNode = head;
+            while (tempNode.next != null) {
+                tempNode = tempNode.next;
             }
-            temp.next = node;
+            tempNode.next = node;
         }
     }
 
     //Data Insert At First
-    public void indertAtFirst(int data) {
+    public void insertAtFirst(int data) {
         Node node = new Node();
         node.data = data;
         node.next = head;
         head = node;
     }
 
+    // Data Insert At Any Positions
+    public void insertAtAnyPosition(int index, int data) {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+
+        if(index == 0) {
+            insertAtFirst(data);
+        }
+
+        Node tempNode = node;
+        for(int i = 0; i<index-1; i++) {
+            tempNode = tempNode.next;
+        }
+        node.next = tempNode.next;
+        tempNode.next = node;
+    }
+
     // Data Print
     public void show() {
-        Node node = head;
+        Node tempNode = head;
         while(true) {
-            System.out.println(node.data);
-            if(node.next == null) break;
-            node = node.next;
+            System.out.println(tempNode.data);
+            if(tempNode.next == null) break;
+            tempNode = tempNode.next;
 
         }
     }
