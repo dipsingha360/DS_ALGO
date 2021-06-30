@@ -5,7 +5,7 @@ public class LinkedList {
     Node head;
 
     // Data Insert
-    public void insert (int data) {
+    public void insert(int data) {
         Node node = new Node();
         node.data = data;
         node.next = null;
@@ -30,7 +30,7 @@ public class LinkedList {
     }
 
     // Data Insert At Any Positions
-    public void insertAtAnyPosition(int index, int data) {
+    public void insertAt(int index, int data) {
         Node node = new Node();
         node.data = data;
         node.next = null;
@@ -45,7 +45,21 @@ public class LinkedList {
             node.next = tempNode.next;
             tempNode.next = node;
         }
+    }
 
+    // Data Deletion
+    public void deleteAt(int index) {
+
+        if(index == 0) {
+            Node tempNode = head;
+            head = tempNode.next;
+        } else {
+            Node temoNode = head;
+            for(int i = 0; i<index-1; i++) {
+                temoNode = temoNode.next;
+            }
+            temoNode.next = temoNode.next.next;
+        }
     }
 
     // Data Print
