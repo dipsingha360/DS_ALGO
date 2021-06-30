@@ -8,7 +8,7 @@ public class Index {
         L1.insert(43);
         L1.insert(57);
         L1.insertAtFirst(20);
-        L1.insertAtAnyPosition(3,58);
+        L1.insertAtAnyPosition(0,58);
         L1.show();
 
     }

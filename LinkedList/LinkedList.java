@@ -37,14 +37,15 @@ public class LinkedList {
 
         if(index == 0) {
             insertAtFirst(data);
+        } else {
+            Node tempNode = head;
+            for(int i = 0; i<index-1; i++) {
+                tempNode = tempNode.next;
+            }
+            node.next = tempNode.next;
+            tempNode.next = node;
         }
 
-        Node tempNode = node;
-        for(int i = 0; i<index-1; i++) {
-            tempNode = tempNode.next;
-        }
-        node.next = tempNode.next;
-        tempNode.next = node;
     }
 
     // Data Print
