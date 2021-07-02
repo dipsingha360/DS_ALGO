@@ -1,4 +1,4 @@
-package DS_ALGO.Stack;
+package DS_ALGO.Stack.StackUsingArray;
 
 public class Stack {
 
