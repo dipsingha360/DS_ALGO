@@ -1,4 +1,4 @@
-package DS_ALGO.Stack.StackUsingArray;
+package DS_ALGO.StackUsingArray;
 
 public class Stack {
 
@@ -17,11 +17,11 @@ public class Stack {
 
     // Pop data
     public void pop() {
-        if(isEmpty()) {
+        if(top <= 0) {
             System.out.println("\nSTACK IS EMPTY");
         }else{
             top--;
-            System.out.println("POP : " + stack[top]);
+//            System.out.println("POP : " + stack[top]);
             stack[top] = 0;
         }
 
@@ -60,10 +60,14 @@ public class Stack {
     // Print data
     public void show() {
 
-        for(int st : stack) {
-            System.out.print(st+"  ");
+//        for(int st : stack) {
+//            System.out.print(st+"  ");
+//        }
+//        System.out.println();
+        while (top != 0) {
+            System.out.println(stack[top-1]);
+            top--;
         }
-        System.out.println();
 
     }
 
