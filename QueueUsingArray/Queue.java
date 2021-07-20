@@ -8,9 +8,8 @@ public class Queue {
 
     // Adding or enQueue data
     void enQueue (int data) {
-        if(size > 10) {
+        if(size >= 10) {
             System.out.println("Queue is FULL");
-            return;
         } else {
             queue[rear] = data;
             rear = (rear+1) % 10;
